@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Story Proof Starter</title>
+  <style>
+    body {
+      background-color: #0e0e0e;
+      font-family: 'Courier New', Courier, monospace;
+      color: #00ffcc;
+      margin: 0;
+      padding: 20px;
+      line-height: 1.6;
+    }
+
+    .glitch-title {
+      font-size: 2em;
+      animation: glitch 1s infinite;
+      color: #fff;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    @keyframes glitch {
+      0% { text-shadow: 2px 2px red; }
+      20% { text-shadow: -2px 0 cyan; }
+      40% { text-shadow: 2px -2px lime; }
+      60% { text-shadow: -2px 2px magenta; }
+      80% { text-shadow: 2px 2px yellow; }
+      100% { text-shadow: -2px -2px blue; }
+    }
+
+    .question-box {
+      background: rgba(255, 255, 255, 0.05);
+      border: 2px dashed #00ffcc;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .choice-button {
+      display: block;
+      background: #00ffcc;
+      color: #0e0e0e;
+      font-weight: bold;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .choice-button:hover {
+      background-color: #ff00cc;
+      color: #fff;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    a.cta {
+      color: #00ffcc;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="glitch-title">404 Not Forgotten: Story Proof Starter</div>
+
+  <div class="question-box" id="question1">
+    <p>🌀 What kind of story are you trying to protect?</p>
+    <button class="choice-button" onclick="nextQuestion('question2')">A family recipe or ritual</button>
+    <button class="choice-button" onclick="nextQuestion('question2')">A lived experience or memory</button>
+    <button class="choice-button" onclick="nextQuestion('question2')">A creative idea or series</button>
+    <button class="choice-button" onclick="nextQuestion('question2')">Something else...</button>
+  </div>
+
+  <div class="question-box hidden" id="question2">
+    <p>📼 What form does this memory take?</p>
+    <button class="choice-button" onclick="showResult('seed')">Text or writing</button>
+    <button class="choice-button" onclick="showResult('story')">Audio or video</button>
+    <button class="choice-button" onclick="showResult('shadow')">Mixed / I’m not sure yet</button>
+  </div>
+
+  <div class="question-box hidden" id="result-seed">
+    <p class="center">🌱 <strong>You are a Seed Keeper</strong></p>
+    <p>You hold the roots of memory—the recipes, the rituals, the names whispered through generations. What you carry may seem small, but it’s the foundation of everything that comes after.</p>
+    <p><strong>This means:</strong><br>
+    • Your story is slow, steady, and vital<br>
+    • You thrive in quiet documentation: journals, printed booklets, audio notes to yourself<br>
+    • You need formats that outlive platforms—PDFs, printouts, and preserved family archives</p>
+    <p><strong>Try this now:</strong><br>
+    Write down one family tradition or food memory. Add a photo, voice note, or ingredient list. Save it. Share it. Archive it in two places.</p>
+    <p class="center"><a class="cta" href="https://calendly.com/auramation/collaborate-with-aura" target="_blank">→ Book your Story Proof Session</a></p>
+  </div>
+
+  <div class="question-box hidden" id="result-story">
+    <p class="center">📖 <strong>You are a Story Bringer</strong></p>
+    <p>You don’t just hold the truth—you broadcast it. Your memory is public, your voice is powerful, and your story could shake systems.</p>
+    <p><strong>This means:</strong><br>
+    • Your ideas deserve visibility and protection<br>
+    • You need strategies for ownership, backup, and IP clarity<br>
+    • You’re not just sharing—you’re building a legacy</p>
+    <p><strong>Try this now:</strong><br>
+    Pick your most viral or vulnerable story. Add your name and today’s date at the top. Save as a PDF and email it to yourself (digital time capsule).</p>
+    <p class="center"><a class="cta" href="https://calendly.com/auramation/collaborate-with-aura" target="_blank">→ Book your Story Proof Session</a></p>
+  </div>
+
+  <div class="question-box hidden" id="result-shadow">
+    <p class="center">🕯️ <strong>You are a Shadow Walker</strong></p>
+    <p>Some stories are hidden on purpose—passed through whispers, not hashtags. You carry truths that were never meant to be viral. But they still deserve to be remembered.</p>
+    <p><strong>This means:</strong><br>
+    • Your memory is sacred and sensitive<br>
+    • You need tools for private preservation—encrypted backups, offline archives, quiet rituals<br>
+    • You are the keeper of what others weren’t ready to say</p>
+    <p><strong>Try this now:</strong><br>
+    Open a blank page and write the thing you’ve never said out loud. Save it as a PDF. Title it with the current moon phase. Don’t share it yet. Just hold it.</p>
+    <p class="center"><a class="cta" href="https://calendly.com/auramation/collaborate-with-aura" target="_blank">→ Book your Story Proof Session</a></p>
+  </div>
+
+  <script>
+    function nextQuestion(id) {
+      document.getElementById('question1').classList.add('hidden');
+      document.getElementById(id).classList.remove('hidden');
+    }
+
+    function showResult(type) {
+      document.getElementById('question2').classList.add('hidden');
+      document.getElementById('result-' + type).classList.remove('hidden');
+    }
+  </script>
+
+</body>
+</html>
